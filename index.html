@@ -1,45 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Your Page Title - Be Descriptive</title>
-    <meta name="description" content="A brief, informative description of your page content">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Youlocateme</title>
+    <meta
+      name="description"
+      content="A brief, informative description of your page content"
+    />
 
     <!-- Open Graph Tags for Social Media Sharing (optional) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Your Open Graph Title">
-    <meta property="og:description" content="A brief description of your content">
-    <meta property="og:image" content="https://example.com/your-image.png">
-    <meta property="og:url" content="https://example.com/your-page-url">
-    <meta property="og:site_name" content="Your Website Name">
-    <meta name="keywords" content="keyword1, keyword2, keyword3">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your Open Graph Title" />
+    <meta
+      property="og:description"
+      content="A brief description of your content"
+    />
+    <meta property="og:image" content="https://example.com/your-image.png" />
+    <meta property="og:url" content="https://example.com/your-page-url" />
+    <meta property="og:site_name" content="Your Website Name" />
+    <meta name="keywords" content="keyword1, keyword2, keyword3" />
 
     <!-- Twitter Card Tags for Twitter Sharing (optional) -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@yourtwitterhandle">
-    <meta name="twitter:title" content="Your Twitter Card Title">
-    <meta name="twitter:description" content="A brief description of your content">
-    <meta name="twitter:image" content="https://example.com/your-image.png">
-    <meta name="twitter:url" content="https://example.com/your-page-url">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@yourtwitterhandle" />
+    <meta name="twitter:title" content="Your Twitter Card Title" />
+    <meta
+      name="twitter:description"
+      content="A brief description of your content"
+    />
+    <meta name="twitter:image" content="https://example.com/your-image.png" />
+    <meta name="twitter:url" content="https://example.com/your-page-url" />
 
     <!-- Favicon (Site Icon) -->
-    <link rel="icon" href="path-to-your-favicon.ico" type="image/x-icon">
+    <link rel="icon" href="path-to-your-favicon.ico" type="image/x-icon" />
 
     <!-- Canonical Tag (if needed) -->
-    <link rel="canonical" href="https://example.com/preferred-page">
+    <link rel="canonical" href="https://example.com/preferred-page" />
 
     <!-- Meta Robots Tag (adjust as needed) -->
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Other meta tags for specific requirements, e.g., geolocation, verification -->
 
     <!-- CSS and JavaScript links (include in the <head> or at the end of <body>) -->
-
-</head>
-<body>
+  </head>
+  <body>
     <!-- Your webpage content here -->
-      <h1>Comming Soon........</h1>
+    <!--
+-->
+    <div class="w-full h-screen flex items-center justify-center">
+      <div class="w-2/5">
+        <div class="space-y-6">
+          <div class="space-y-2 text-center flex justify-center">
+            <!-- <h1 class="text-3xl font-bold">Create an Account</h1> -->
+            <div class="flex items-center justify-center flex-col">
+              <img src="./icon2.png" class="w-28" alt="" />
+              <h2 class="text-3xl font-bold text-gray-700">Youlocateme</h2>
+            </div>
+            <!-- <p class="text-gray-500 dark:text-gray-400">
+              Enter your billing address to create an account
+            </p> -->
+          </div>
+          <div class="space-y-4">
+            <div class="space-y-2">
+              <label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="street"
+              >
+                Street
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="street"
+                placeholder="123 Street"
+                required=""
+              />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="city"
+                >
+                  City
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  id="city"
+                  placeholder="City"
+                  required=""
+                />
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="zip"
+                >
+                  ZIP
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  id="zip"
+                  placeholder="ZIP"
+                  required=""
+                />
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="country"
+              >
+                Country
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="country"
+                placeholder="Country"
+                required=""
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="country"
+              >
+                Home Name
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="country"
+                placeholder="Country"
+                required=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- JavaScript for interaction and dynamic content (place at the end of <body>) -->
-</body>
+  </body>
 </html>
