@@ -67,6 +67,20 @@
             <div class="space-y-2">
               <label
                 class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="country"
+              >
+                House Name
+              </label>
+              <input
+                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                placeholder="Country"
+                id="homeName"
+                required
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 for="street"
               >
                 Street
@@ -75,7 +89,7 @@
                 class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 id="street"
                 placeholder="123 Street"
-                required=""
+                required
               />
             </div>
             <div class="grid grid-cols-2 gap-4">
@@ -90,7 +104,7 @@
                   class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   id="city"
                   placeholder="City"
-                  required=""
+                  required
                 />
               </div>
               <div class="space-y-2">
@@ -104,7 +118,7 @@
                   class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   id="zip"
                   placeholder="ZIP"
-                  required=""
+                  required
                 />
               </div>
             </div>
@@ -119,27 +133,62 @@
                 class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 id="country"
                 placeholder="Country"
-                required=""
-              />
-            </div>
-            <div class="space-y-2">
-              <label
-                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                for="country"
-              >
-                Home Name
-              </label>
-              <input
-                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                id="country"
-                placeholder="Country"
-                required=""
+                required
               />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- JavaScript for interaction and dynamic content (place at the end of <body>) -->
+    <script>
+      const registrationForm = document.getElementById("registrationForm");
+
+      registrationForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const homeName = document.getElementById("homeName").value;
+        const street = document.getElementById("street").value;
+        const city = document.getElementById("city").value;
+        const zip = document.getElementById("zip").value;
+        const country = document.getElementById("country").value;
+
+        const data = {
+          homeName,
+          billingAddress: {
+            street,
+            city,
+            zip,
+            country,
+          },
+        };
+
+        try {
+          const response = await fetch(
+            "https://api.youlocate.me/api/register",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error("Failed to register");
+          }
+
+          const responseData = await response.json();
+          alert(
+            `Registration successful. Location ID: ${responseData.locationId}`
+          );
+
+          // Optionally, you can retrieve and display the address using the locationId
+        } catch (error) {
+          console.error(error.message);
+          // Handle error
+        }
+      });
+    </script>
   </body>
 </html>
