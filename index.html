@@ -156,21 +156,28 @@
                 required
               />
             </div>
-            <div class="space-y-2 ">
-              <label for="">Response</label>
-              <div class="max-w-2xl mx-auto opacity-30">
-                <pre class= " text-black  rounded-lg overflow-x-auto border border-gray-300 ">
-                    <code class="language-json">
-                    </code>
-                </pre>
-            </div>
-            </div>
+            
             <div class="space-y-2 ">
               <label for="">Request</label>
-              <div class="max-w-2xl mx-auto opacity-30">
-                <pre class= " text-black  rounded-lg overflow-x-auto border border-gray-300 ">
-                    <code class="language-bash">
-                      curl 'https://api.locateme.com/v1/`${id}`@locateme' 
+              <div class="max-w-2xl mx-auto ">
+                <div class= " text-black h-10  rounded-lg p-2 border border-gray-300 flex aling-center ">
+                    <code class="">
+                     <span class="text-pink-700">curl</span> <span class="text-green-700"> 'https://api.locateme.com/v1/`${id}`@locateme' </span>
+                    </code>
+                  </div>
+            </div>
+            </div>
+            <div class="space-y-2 ">
+              <label for="">Response</label>
+              <div class="max-w-2xl mx-auto opacity-70">
+                <pre class= "text-black  rounded-lg overflow-x-auto border border-gray-100 ">
+                    <code class="language-json">
+              "billingAddress" : {
+                    "street" : "568",
+                    "city" : "KOZHIKODE",
+                    "zip" : "673508",
+                    "country" : "India"
+                    },
                     </code>
                 </pre>
             </div>
