@@ -18,3 +18,8 @@
 .toggle-buttons .active {
   border-bottom: 2px solid #007bff;
 }
+
+.dropdown-btn:focus + .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
