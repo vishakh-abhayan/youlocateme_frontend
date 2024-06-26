@@ -6,13 +6,13 @@
     <title>YouLocateMe</title>
     <meta
       name="description"
-      content="YouLocateMe simplifies online shopping with unique location IDs. Register once and use your ID for quick, secure checkouts across e-commerce sites. Enhance your shopping experience with convenience and security."
+      content="simplifies online address management with its innovative location ID system. Our service enables users to create unique, easy-to-remember IDs that streamline address sharing across various platforms."
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="YouLocateMe" />
     <meta
       property="og:description"
-      content="Discover how YouLocateMe can transform your online shopping with a unique location ID for fast, secure checkouts. Register today!"
+      content="Discover how YouLocateMe can transform your adress mangement with a unique location ID for fast, secure checkouts. Register today!"
     />
     <meta property="og:image" content="https://youlocate.me/banner_og.png" />
     <meta property="og:url" content="https://youlocate.me" />
@@ -46,6 +46,50 @@
   <body>
     <div class="w-full h-screen flex items-center justify-center">
       <div class="w-2/5">
+        <nav class="bg-white absolute top-0 right-10">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between">
+              <div class="flex space-x-7">
+                <!-- Primary Navigation Links -->
+                <div class="hidden md:flex items-center space-x-1">
+                  <a
+                    href="/About.html"
+                    class="py-4 px-2 text-gray-500 font-semibold"
+                    >About</a
+                  >
+                  <a
+                    href="./Docs.html"
+                    class="py-4 px-2 text-gray-500 font-semibold"
+                    >Docs</a
+                  >
+                  <!-- Dropdown Menu -->
+                  <div class="relative">
+                    <button
+                      class="py-4 px-2 text-gray-500 font-semibold dropdown-btn"
+                    >
+                      More +
+                    </button>
+                    <div
+                      class="dropdown-content hidden absolute right-0 shadow-lg bg-white z-50"
+                    >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      >
+                        Privacy Policy</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        >Terms and Condition</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
         <div class="space-y-6">
           <div class="space-y-2 text-center flex justify-center">
             <div
@@ -54,6 +98,12 @@
               <h2 class="text-2xl font-bold text-gray-700">YouLocateMe</h2>
               <img src="./assets/icon2.png" class="w-9" alt="" />
             </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-center text-gray-500 font-bold text-xl">
+              Revolutionizes the way you share your address online. With our
+              unique location ID system
+            </p>
           </div>
           <div class="toggle-buttons flex justify-center space-x-4">
             <button id="signupBtn" class="toggle-btn active">Register</button>
@@ -265,6 +315,21 @@
           signupBtn.classList.remove('active');
           signinBtn.classList.add('active');
         });
+
+        document
+          .querySelector('.dropdown-btn')
+          .addEventListener('click', function (event) {
+            var dropdowns = document.getElementsByClassName('dropdown-content');
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('hidden')) {
+                openDropdown.classList.remove('hidden');
+              } else {
+                openDropdown.classList.add('hidden');
+              }
+            }
+          });
 
         registrationForm.addEventListener('submit', async (event) => {
           event.preventDefault();
